@@ -560,6 +560,10 @@ public class LivePlayActivity extends BaseActivity {
         }
 
         if (tvBottomLayout.getVisibility() == View.GONE || tvBottomLayout.getVisibility() == View.INVISIBLE) {
+            mHandler.removeCallbacks(mUpdateTimeRun);
+            mHandler.removeCallbacks(mUpdateNetSpeedRun);
+            tvTime.setVisibility(View.GONE);
+            tvNetSpeed.setVisibility(View.GONE);
             tvBottomLayout.setVisibility(View.VISIBLE);
             tvBottomLayout.setTranslationY(tvBottomLayout.getHeight() / 2);
             tvBottomLayout.setAlpha(0.0f);
@@ -589,6 +593,10 @@ public class LivePlayActivity extends BaseActivity {
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 super.onAnimationEnd(animation);
+                                mHandler.post(mUpdateTimeRun);
+                                mHandler.post(mUpdateNetSpeedRun);
+                                tvTime.setVisibility(View.VISIBLE);
+                                tvNetSpeed.setVisibility(View.VISIBLE);
                                 tvBottomLayout.setVisibility(View.INVISIBLE);
                                 tvBottomLayout.clearAnimation();
                             }
@@ -694,7 +702,7 @@ public class LivePlayActivity extends BaseActivity {
                                 tv_next_name.setText(((Epginfo) arrayList.get(size + 1)).title);
                             } else {
                                 tv_next_time.setText("00:00 - 23:59");
-                                tv_next_name.setText("No Information");
+                                tv_next_name.setText(getString(R.string.act_no_information));
                             }
                             break;
                         } else {
@@ -1761,7 +1769,7 @@ public class LivePlayActivity extends BaseActivity {
         @Override
         public void run() {
             Date day = new Date();
-            SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
+            SimpleDateFormat df = new SimpleDateFormat("hh:mm aa", Locale.ENGLISH);
             tvTime.setText(df.format(day));
             mHandler.postDelayed(this, 1000);
         }

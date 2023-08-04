@@ -610,17 +610,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginTop="@dimen/vs_5"
-        android:layout_marginEnd="@dimen/vs_10"
-        android:layout_marginRight="@dimen/vs_10"
+        android:layout_marginTop="@dimen/vs_15"
+        android:layout_marginEnd="@dimen/vs_20"
+        android:layout_marginRight="@dimen/vs_60"
         android:gravity="center"
         android:shadowColor="@color/color_FF000000"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="2"
         android:text="00:00 PM"
+        android:fontFamily="@font/advent_pro_extralight"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="@dimen/ts_22"
+        android:textSize="@dimen/ts_36"
         android:textStyle="bold"
         android:visibility="gone" />
     <!--右下角网速显示-->
@@ -638,8 +639,9 @@
         android:shadowDy="0"
         android:shadowRadius="2"
         android:text="0.00 MB/s"
+        android:fontFamily="@font/advent_pro_extralight"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="@dimen/ts_22"
+        android:textSize="@dimen/ts_26"
         android:textStyle="bold"
         android:visibility="gone" />
 
