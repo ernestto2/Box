@@ -623,6 +623,7 @@
         android:textColor="@color/color_FFFFFF"
         android:textSize="@dimen/ts_36"
         android:textStyle="bold"
+        android:background="@color/color_3D3D3D_50"
         android:visibility="gone" />
     <!--右下角网速显示-->
     <TextView
@@ -641,8 +642,9 @@
         android:text="0.00 MB/s"
         android:fontFamily="@font/advent_pro_extralight"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="@dimen/ts_26"
+        android:textSize="@dimen/ts_36"
         android:textStyle="bold"
+        android:background="@color/color_3D3D3D_50"
         android:visibility="gone" />
 
     <LinearLayout
